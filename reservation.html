@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reservation - Chennai Restaurant</title>
+<link href="C:\Users\Admin\Desktop\chennairestaurant\background.png" rel="stylesheet">
+<link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+
+<div class="reservation-container">
+  <form id="reservationForm">
+    <h1>Reserve Your Table</h1>
+
+    <p class="note">⚠ Please confirm your reservation before 1 hour of actual time.</p>
+
+    <label>Name</label>
+    <input type="text" id="name" required>
+
+    <label>Date</label>
+    <input type="date" id="date" required>
+
+    <label>Time</label>
+    <input type="time" id="time" required>
+
+    <label>Day</label>
+    <input type="text" id="day" readonly>
+
+    <label>Table Preference</label>
+    <select id="table" required>
+      <option value="">Select Table</option>
+      <option>Near Window</option>
+      <option>Near Wall</option>
+      <option>Center</option>
+    </select>
+
+    <button type="button" onclick="reserveTable()">Reserve</button>
+    <button type="button" id="confirmBtn" onclick="confirmReservation()" disabled>Confirm Reservation</button>
+
+    <p id="message"></p>
+  </form>
+</div>
+
+<script src="reservation.js"></script>
+</body>
+</html>

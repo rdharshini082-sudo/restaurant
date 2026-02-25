@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chennai Restaurant</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap" rel="stylesheet">
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family:'Roboto', sans-serif;
+    background: url("images/background.png") no-repeat center center/cover;
+    height:100vh;
+}
+
+/* Top bar */
+.top-bar{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+/* Profile icon */
+.profile-icon{
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* Center content */
+.center-content{
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fdf8ed;
+}
+
+.center-content img{
+    width:120px;
+}
+
+.center-content h1{
+    font-family:'Lato', sans-serif;
+    font-size:48px;
+}
+
+/* Menu buttons */
+.menu-links{
+    margin-top:30px;
+}
+
+.menu-links a{
+    display:inline-block;
+    margin:10px;
+    padding:12px 18px;
+    background:#be5836;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.menu-links i{
+    margin-right:6px;
+}
+
+/* Modal */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.modal-content{
+    background:#fdf8ed;
+    width:300px;
+    padding:20px;
+    border-radius:10px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+.modal-content input,
+.modal-content textarea{
+    width:100%;
+    margin:5px 0;
+    padding:6px;
+}
+
+.modal-content button{
+    margin-top:10px;
+    width:100%;
+    padding:8px;
+    background:#be2a06;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+/* Close button */
+.close-btn{
+    float:right;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:50%;
+    width:25px;
+    height:25px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Profile icon -->
+<div class="top-bar">
+    <i class="fa fa-user profile-icon" onclick="openProfile()"></i>
+</div>
+
+<!-- Center content -->
+<div class="center-content">
+    <img src="images/logo.png" alt="Logo">
+    <h1>CHENNAI RESTAURANT</h1>
+
+    <div class="menu-links">
+        <a href="reservation.html"><i class="fa fa-calendar"></i> Reservation</a>
+        <a href="menu.html"><i class="fa fa-utensils"></i> Menu</a>
+        <a href="order.html"><i class="fa fa-cart-shopping"></i> Order</a>
+        <a href="discounts.html"><i class="fa fa-tags"></i> Discounts</a>
+        <a href="feedback.html"><i class="fa fa-comment"></i> Feedback</a>
+    </div>
+</div>
+
+<!-- Profile Modal -->
+<div class="modal" id="profileModal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeProfile()">✖</button>
+    <h3>Profile</h3>
+    <input type="text" id="name" placeholder="Name">
+    <input type="date" id="dob">
+    <input type="text" id="place" placeholder="Place">
+    <input type="text" id="phone" placeholder="Phone Number">
+    <textarea id="address" placeholder="Address"></textarea>
+    <button onclick="sendOTP()">Save</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+
+<script>
+let generatedOTP = "";
+
+// Open profile
+function openProfile(){
+  document.getElementById("profileModal").style.display = "block";
+}
+
+// Close profile
+function closeProfile(){
+  document.getElementById("profileModal").style.display = "none";
+}
+
+// Send OTP & save profile
+function sendOTP(){
+  let phone = document.getElementById("phone").value;
+  let dob = document.getElementById("dob").value;
+
+  if(phone === "" || dob === ""){
+    alert("Please fill phone number and DOB");
+    return;
+  }
+
+  // Generate OTP
+  generatedOTP = Math.floor(1000 + Math.random() * 9000);
+  alert("OTP sent: " + generatedOTP); // demo only
+
+  let userOTP = prompt("Enter OTP:");
+
+  if(userOTP == generatedOTP){
+    // Save DOB for discount system
+    localStorage.setItem("userDOB", dob);
+
+    alert("Profile saved successfully!");
+    closeProfile();
+  } else {
+    alert("Wrong OTP! Try again.");
+  }
+}
+
+// Logout
+function logout(){
+  alert("Logged out successfully");
+  localStorage.removeItem("userDOB");
+  closeProfile();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Discounts</title>
+<style>
+body{
+  font-family:Roboto,sans-serif;
+  background:#fdf8ed;
+  padding:20px;
+}
+.card{
+  background:#ddcfc4;
+  padding:15px;
+  margin:15px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.card:hover{
+  background:#d2992f;
+}
+</style>
+</head>
+<body>
+
+<h1>Available Discounts 🎉</h1>
+
+<div class="card" onclick="applyDiscount(5,'Weekend Discount (5%)')">
+  <h2>Weekend Discount</h2>
+  <p>Every Saturday – 5% OFF</p>
+</div>
+
+<div class="card" onclick="applyDiscount(40,'Birthday Discount (40%)')">
+  <h2>Birthday Discount</h2>
+  <p>On your birthday – 40% OFF</p>
+</div>
+
+<div class="card" onclick="applyDiscount(15,'Festive Discount (15%)')">
+  <h2>Festive Discount</h2>
+  <p>On festival days – 15% OFF</p>
+</div>
+
+<script>
+function applyDiscount(percent, name){
+  localStorage.setItem("manualDiscount", percent);
+  localStorage.setItem("manualDiscountName", name);
+  alert(name + " applied to your bill!");
+  window.location.href = "order.html";
+}
+</script>
+
+</body>
+</html>

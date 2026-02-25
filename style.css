@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* HOME SECTION */
+.home {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(253,248,237,0.85), rgba(225,190,128,0.85)),
+    url("background.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* PROFILE ICON */
+.profile {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #142037;
+  color: #fdf8ed;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* CENTER BOX */
+.center-box {
+  background: rgba(253,248,237,0.9);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* LOGO */
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
+
+/* TITLE */
+.center-box h1 {
+  font-family: 'Lato', sans-serif;
+  color: #3e2b39;
+  font-size: 42px;
+}
+
+/* TAGLINE */
+.center-box p {
+  color: #a35815;
+  margin: 10px 0 25px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.buttons a {
+  text-decoration: none;
+  background: #be2a06;
+  color: #fdf8ed;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.buttons a i {
+  margin-right: 6px;
+}
+
+.buttons a:hover {
+  background: #d2992f;
+  color: #142037;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+  .center-box {
+    width: 90%;
+  }
+}
+.profile-menu{
+  /* Profile icon fixed top-right */
+.profile-menu{
+    position: absolute;  /* fixed relative to header */
+    top: 15px;           /* distance from top */
+    right: 25px;         /* distance from right */
+}
+.profile-menu i{
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+}
+.profile-menu i{
+  font-size:26px;
+  cursor:pointer;
+}
+.dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  background:white;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+  overflow:hidden;
+}
+.dropdown button{
+  display:block;
+  width:100%;
+  padding:10px 15px;
+  border:none;
+  background:white;
+  cursor:pointer;
+}
+.dropdown button:hover{
+  background:#ddd;
+}
+
+/* popup */
+.modal{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+}
+.modal-content{
+  background:#fdf8ed;
+  width:320px;
+  margin:80px auto;
+  padding:20px;
+  border-radius:10px;
+}
+input,textarea{
+  width:100%;
+  margin:6px 0;
+  padding:6px;
+}

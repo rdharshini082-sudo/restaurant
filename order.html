@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Order Page</title>
+<style>
+body{
+  font-family:Roboto, sans-serif;
+  background:#f7f1e7;
+  padding:20px;
+}
+button{
+  padding:10px 20px;
+  margin:10px;
+  cursor:pointer;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+th,td{
+  border:1px solid #333;
+  padding:8px;
+  text-align:center;
+}
+.total{
+  margin-top:15px;
+  font-size:18px;
+}
+</style>
+</head>
+<body>
+
+<h1>Orders</h1>
+
+<button onclick="showPresentOrder()">Present Order</button>
+<button onclick="showPreviousOrders()">Previous Orders</button>
+
+<div id="orderArea"></div>
+
+<script>
+function showPresentOrder(){
+  let order = JSON.parse(localStorage.getItem("presentOrder"));
+
+  if(!order){
+    document.getElementById("orderArea").innerHTML = "<p>No present order.</p>";
+    return;
+  }
+
+  let html = `<h2>Present Order</h2>
+  <table>
+  <tr><th>Item</th><th>Qty</th><th>Price</th></tr>`;
+
+  let total = 0;
+  order.forEach(item=>{
+    html += `<tr>
+      <td>${item.name}</td>
+      <td>${item.qty}</td>
+      <td>${item.price}</td>
+    </tr>`;
+    total += item.price;
+  });
+
+  html += `</table><div class="total"><b>Total:</b> ₹${total}</div>`;
+
+  document.getElementById("orderArea").innerHTML = html;
+}
+
+function showPreviousOrders(){
+  let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  let html = `<h2>Previous Orders</h2>`;
+
+  if(history.length === 0){
+    html += "<p>No previous orders.</p>";
+  }
+
+  history.forEach((order, index)=>{
+    html += `<h3>Order ${index+1}</h3>
+    <table>
+    <tr><th>Item</th><th>Qty</th><th>Price</th></tr>`;
+    let total = 0;
+    order.forEach(item=>{
+      html += `<tr>
+        <td>${item.name}</td>
+        <td>${item.qty}</td>
+        <td>${item.price}</td>
+      </tr>`;
+      total += item.price;
+    });
+    html += `</table><p><b>Total:</b> ₹${total}</p>`;
+  });
+
+  document.getElementById("orderArea").innerHTML = html;
+}
+
+// Save present order into history when page loads
+let present = JSON.parse(localStorage.getItem("presentOrder"));
+if(present){
+  let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  history.push(present);
+  localStorage.setItem("orderHistory", JSON.stringify(history));
+}
+
+// Default view
+showPresentOrder();
+</script>
+
+</body>
+</html>

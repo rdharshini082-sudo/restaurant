@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: url("https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1600") no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservation-container {
+  background: rgba(253,248,237,0.9);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #3e2b39;
+  font-family: 'Lato', sans-serif;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  background: #be2a06;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #d2992f;
+  color: #142037;
+}
+
+#confirmBtn {
+  background: #142037;
+}
+
+.note {
+  font-size: 14px;
+  color: #a35815;
+  text-align: center;
+}
+
+#message {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .reservation-container {
+    width: 90%;
+  }
+}

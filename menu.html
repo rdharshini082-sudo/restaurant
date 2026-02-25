@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Menu - Chennai Restaurant</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fdf8ed;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    color: #142037;
+    padding: 20px;
+}
+
+.menu-section {
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #ddcfc4;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu-section h2 {
+    color: #be2a06;
+    border-bottom: 2px solid #be5836;
+    padding-bottom: 5px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #555;
+}
+
+.menu-item span {
+    width: 45%;
+}
+
+.menu-item i {
+    color: #a35815;
+    margin-right: 8px;
+}
+
+.price {
+    font-weight: bold;
+    color: #3e2b39;
+}
+
+.qty {
+    width: 60px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🍽️ CHENNAI RESTAURANT MENU</h1>
+
+<!-- South Indian -->
+<div class="menu-section">
+<h2>🌾 South Indian</h2>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-bowl-rice"></i> Plain Dosa</span>
+<span class="price">₹80</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-leaf"></i> Idli & Sambar</span>
+<span class="price">₹60</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-pepper-hot"></i> Masala Dosa</span>
+<span class="price">₹120</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-fish"></i> Fish Curry</span>
+<span class="price">₹280</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-drumstick-bite"></i> Chicken Chettinad</span>
+<span class="price">₹350</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+</div>
+
+<!-- North Indian -->
+<div class="menu-section">
+<h2>🥘 North Indian</h2>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-bread-slice"></i> Butter Naan</span>
+<span class="price">₹50</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-fire"></i> Paneer Butter Masala</span>
+<span class="price">₹220</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-drumstick-bite"></i> Butter Chicken</span>
+<span class="price">₹320</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-bowl-food"></i> Veg Biryani</span>
+<span class="price">₹180</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-bowl-food"></i> Mutton Biryani</span>
+<span class="price">₹450</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+</div>
+
+<!-- Western -->
+<div class="menu-section">
+<h2>🍔 Western</h2>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-burger"></i> Veg Burger</span>
+<span class="price">₹150</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-burger"></i> Chicken Burger</span>
+<span class="price">₹180</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-pizza-slice"></i> Cheese Pizza</span>
+<span class="price">₹400</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-hotdog"></i> Hot Dog</span>
+<span class="price">₹200</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-french-fries"></i> French Fries</span>
+<span class="price">₹120</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+</div>
+
+<!-- Desserts -->
+<div class="menu-section">
+<h2>🍰 Desserts</h2>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-ice-cream"></i> Vanilla Ice Cream</span>
+<span class="price">₹90</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-ice-cream"></i> Chocolate Ice Cream</span>
+<span class="price">₹110</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-cake-candles"></i> Chocolate Cake</span>
+<span class="price">₹250</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-cookie"></i> Brownie with Ice Cream</span>
+<span class="price">₹300</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+
+<div class="menu-item">
+<span><i class="fa-solid fa-candy-cane"></i> Gulab Jamun</span>
+<span class="price">₹100</span>
+<input type="number" class="qty" min="0" value="0">
+</div>
+</div>
+
+<script>
+function goToOrder() {
+    let items = [];
+
+    document.querySelectorAll(".menu-item").forEach(item => {
+        let name = item.querySelector("span").innerText;
+        let price = parseInt(item.querySelector(".price").innerText.replace("₹",""));
+        let qty = parseInt(item.querySelector("input").value);
+
+        if(qty > 0){
+            items.push({name:name, price:price, qty:qty});
+        }
+    });
+
+    // SAVE as present order (for order page)
+    localStorage.setItem("presentOrder", JSON.stringify(items));
+
+    // Go to order page
+    window.location.href = "order.html";
+}
+</script>
+
+<button onclick="goToOrder()" style="margin:20px auto;display:block;padding:12px 20px;font-size:16px;">
+Proceed to Order
+</button>
+
+</body>
+</html>
